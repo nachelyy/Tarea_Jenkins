@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla nachely_2190705</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabla nachely_2190705</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Matrícula</th>
+        </tr>
+
+        <script>
+            fetch('/data.php')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(row => {
+                        document.write(`
+                            <tr>
+                                <th>${row.id}</th>
+                                <th>${row.nombre}</th>
+                                <th>${row.matricula}</th>
+                            </tr>
+                        `);
+                    });
+                });
+        </script>
+    </table>
+</body>
+</html>
